@@ -1,0 +1,46 @@
+###visualisar ids do sitema:
+GET http://localhost:3000/user/
+
+###saldo e extrato pelo id:
+GET http://localhost:3000/user/22ee6aad-664a-4cb3-9784-49c83fc45cfd
+Content-Type: application/json
+
+###adicionar um usuario:
+POST http://localhost:3000/user/
+Content-Type: application/json
+
+{
+"nome": "Tiago", "cpf": "010.883.980-18", "cidade": "Santa Rosa", "cep": "98780050"
+}
+
+###adicionar dinheiro ao usuario:
+PUT http://localhost:3000/user/deposito/22ee6aad-664a-4cb3-9784-49c83fc45cfd
+content-type: application/json
+
+{
+"tipo": "deposito", "valor": 500
+}
+
+###retirar dinheiro do usuario:
+PUT http://localhost:3000/user/retirada/22ee6aad-664a-4cb3-9784-49c83fc45cfd
+content-type: application/json
+
+{
+"tipo": "retirada", "valor": 500
+}
+
+###deletar usuairo:
+DELETE http://localhost:3000/user/22ee6aad-664a-4cb3-9784-49c83fc45cfd
+
+
+###atualisar usuario pelo id:
+PUT http://localhost:3000/user/22ee6aad-664a-4cb3-9784-49c83fc45cfd
+content-type: application/json
+
+{
+"nome": "Joao", "cidade": "Santa Rosa", "cep": "98780050"
+}
+
+###buscar id pela rota:
+content-type: application/json
+GET http://localhost:3000/user/
